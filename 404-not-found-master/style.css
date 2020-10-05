@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Text colors */
+  --gray-1: #333333;
+  --gray-2: #4f4f4f;
+
+  /* light */
+  --white-1: #ffffff;
+
+  /* Hover color */
+  --link-hover: #ff6d5b;
+  /* margin */
+  --mb-xl: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Space Mono', monospace;
+  background-color: var(--white-1);
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+nav {
+  margin-bottom: 3rem;
+}
+
+nav a {
+  font-family: 'Inconsolata', monospace;
+  color: var(--gray-1);
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: 0.3s ease-out color;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section__image {
+  width: 100%;
+  max-width: 30rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+}
+
+.section__image img {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.description--header {
+  font-weight: 700;
+  color: var(--gray-1);
+  font-size: 2.5rem;
+  margin-bottom: var(--mb-xl);
+}
+
+.description--text {
+  color: var(--gray-2);
+  width: 90%;
+  margin-bottom: var(--mb-xl);
+}
+
+.description--cta {
+  display: inline-block;
+  padding: 1.5rem;
+  background-color: var(--gray-1);
+  color: var(--white-1);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: 0.5s ease-out background-color;
+}
+
+/* footer */
+footer {
+  margin-top: var(--mb-xl);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--gray-1);
+  transition: 0.3s ease-out color;
+}
+
+@media (hover: hover) {
+  nav a:hover {
+    color: var(--link-hover);
+  }
+  .section__image:hover {
+    transform: translateY(-10%);
+  }
+  .description--cta:hover {
+    background-color: var(--link-hover);
+  }
+  footer a:hover {
+    color: var(--link-hover);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  :root {
+    --mb-xl: 2rem;
+  }
+  body {
+    margin: 0 auto;
+  }
+  nav {
+    padding: 1rem 3rem;
+  }
+  section {
+    align-self: center;
+    flex-direction: row;
+  }
+  .section__image {
+    margin-right: 4rem;
+  }
+
+  .section__image img {
+    margin: 0;
+    width: 100%;
+  }
+  .description--header {
+    max-width: 25rem;
+  }
+  .description--text {
+    max-width: 17rem;
+  }
+}
